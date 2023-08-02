@@ -20,6 +20,17 @@ const Dashboard = () => {
     }
   }
 
+  function commafy( num ) {
+    var str = num.toString().split('.');
+    if (str[0].length >= 5) {
+        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+    }
+    if (str[1] && str[1].length >= 5) {
+        str[1] = str[1].replace(/(\d{3})/g, '$1 ');
+    }
+    return str.join('.');
+}
+
   return (
     <div className=''>
       <h1 className='hero__subtitle heading'>WorldMeter Ranking updated as of 2023</h1>
@@ -39,14 +50,14 @@ const Dashboard = () => {
           {data.map((e)=>(
             <tr key={e.id}>
               <td>{e.name}</td>
-              <td>{e.gdp}</td>
-              <td>{e.population}</td>
-              <td>{e.area}</td>
-              <td>{e.incomePerCapita}</td>
-              <td>{e.exports}</td>
-              <td>{e.imports}</td>
-              <td>{e.populationDensity}</td>
-              <td>{e.crimeRate}</td>
+              <td>{commafy(e.gdp)}</td>
+              <td>{commafy(e.population)}</td>
+              <td>{commafy(e.area)}</td>
+              <td>{commafy(e.incomePerCapita)}</td>
+              <td>{commafy(e.exports)}</td>
+              <td>{commafy(e.imports)}</td>
+              <td>{commafy(e.populationDensity)}</td>
+              <td>{commafy(e.crimeRate)}</td>
             </tr>
           ))}
         </tbody>
