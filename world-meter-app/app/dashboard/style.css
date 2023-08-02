@@ -1,0 +1,30 @@
+.content-table{
+    border-collapse: collapse;
+    margin:5%;
+    font-size: 0.9em;
+    min-width: 90%;
+}
+thead {
+    background-color: #009879;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+th {
+    padding: 12px 15px;
+}
+th:hover{
+    cursor: pointer;
+}
+td{
+    padding: 12px 15px;
+}
+tr{
+    border-bottom: 1px solid #dddd;
+}
+tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.heading{
+    margin-left: 25%;
+}
