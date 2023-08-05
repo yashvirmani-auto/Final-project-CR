@@ -1,6 +1,6 @@
 
 export const fetchCountries = async () => {
-    const data = await fetch('.dummyData.json').then((data)=>{
+    const data = await fetch('dummy-data.json').then((data)=>{
         return data
     })
 }
